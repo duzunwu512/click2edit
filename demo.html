@@ -1,0 +1,113 @@
+<html>
+<head>
+<link rel="stylesheet" href="click2edit.css">
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://cdn.bootcss.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>	
+<script type="text/JavaScript" src="click2edit.js"></script>
+<script type="text/JavaScript" src="jquery.mockjax.js"></script>
+</head>
+<body>
+<style type="text/css">
+    table{
+        width: 600px;
+        height: auto;
+    }
+</style>
+<script type="text/JavaScript">
+    $.mockjax({
+          url: '*/dummy/url',
+          contentType: 'text/json',
+          responseTime:500,
+          responseText: {
+            status: 'success'
+          }
+        });
+
+    $.mockjax({
+          url: '/dummy/selectdata',
+          contentType: 'text/json',
+          responseTime:500,
+          dataType: "json",
+        responseText: {
+            data: [{"key":"000001", "value":"0000001"},{"key":"000002", "value":"0000002"},{"key":"000003", "value":"0000003"},{"key":"000004", "value":"0000004"}]
+          }
+        });
+
+
+	$(document).ready(function() {
+		$("[data-fieldtype]").clickToEdit();
+
+
+
+        $("#adiv").on('click', function(event){
+            console.log("1111111111111111111");
+
+        });
+
+        $("#bdiv").on("click", function(event){
+            console.log("22222222222222");
+            event.stopPropagation();
+            return false;
+        });
+
+        
+	});
+
+    function callBack(){
+        return confirm('Are you sure you want to remove this?');
+    }
+
+    function tttt(){
+        $("#bdiv span").removeClass("fa fa-pencil").addClass("loading_smart");
+    }
+
+</script>
+
+<style type="text/css">
+
+    
+    
+</style>
+
+<div id='adiv'>
+    <div id='bdiv' class="clickToEdit_wap">bbbbbbbbbbbbbbb<span class=" aui-icon edit fa fa-pencil" style=" "></span>
+    </div>
+    <a href='JavaScript:void(0);' onclick='tttt();'>tttttttttttttt</a>
+</div>
+
+
+
+<table>
+<tr>
+	<td><div id="testSpan1" data-fieldtype="boolean" data-url="/dummy/url">No</div></td>
+</tr>
+
+<tr>
+	<td><div id="testSpan2" data-fieldtype="select" class="click2edit" click2edit data-value="1" data-callback="dataCallback" data-url="/dummy/url">Value 1</div></td>
+</tr>
+
+<tr>
+	<td><div id="testSpan3" data-fieldtype="text" class="click2edit" click2edit data-elemName="useThisElemName" data-url="/dummy/url">Here is my text</div></td>
+</tr>
+<tr>
+	<td><div id="testSpan34" data-fieldtype="textarea" class="click2edit" click2edit data-elemName="useThisElemName" data-url="/dummy/url">Here is my text</div></td>
+</tr>
+<tr>
+	<td><div id="testSpan35" data-fieldtype="text" class="click2edit" click2edit data-elemName="useThisElemName" data-url="/dummy/url" >Here is my text</div></td>
+</tr>
+<tr>
+    <td><div id="testSpan35" data-fieldtype="textarea" class="click2edit" click2edit data-elemName="useThisElemName" data-url="/dummy/url">Here is my textdddddddddddddddddddddddddddddddddd</div></td>
+</tr>
+<tr>
+    <td><div id="testSpan35" data-fieldtype="select" class="click2edit" click2edit data-elemName="useThisElemName" data-url="/dummy/url"  data-alldata='[{"key":"000001", "value":"0000001"},{"key":"000002", "value":"0000002"},{"key":"000003", "value":"0000003"},{"key":"000004", "value":"0000004"}]'>0000003</div></td>
+</tr>
+<tr>
+    <td><div id="testSpan35" data-fieldtype="select" class="click2edit" click2edit data-elemName="useThisElemName" data-url="/dummy/url"  data-data-url='/dummy/selectdata'>0000004</div></td>
+</tr>
+<tr>
+    <td><div id="testSpan36" data-fieldtype="text" class="click2edit" click2edit data-elemName="useThisElemName" data-url="/dummy/url">Hereddddd</div></td>
+</tr>
+</table>                  
+</body>
+</html>

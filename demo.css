@@ -1,0 +1,190 @@
+.wrap {
+	padding: 10px 10px 0 150px;
+}
+
+.aui-icon {
+	display: inline-block;
+	height: 16px;
+	vertical-align: text-bottom;
+	width: 16px;
+	text-align: center;
+}
+
+.aui-button, 
+.aui-button:visited {
+	background: #f2f2f2;
+	background: -webkit-linear-gradient(top,#fff 0,#f2f2f2 100%);
+	background: -moz-linear-gradient(top,#fff 0,#f2f2f2 100%);
+	background: -ms-linear-gradient(top,#fff 0,#f2f2f2 100%);
+	background: -o-linear-gradient(top,#fff 0,#f2f2f2 100%);
+	background: linear-gradient(to bottom,#fff 0,#f2f2f2 100%);
+	border: 1px solid #ccc;
+	border-radius: 3.01px;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	color: #333;
+	cursor: pointer;
+	display: inline-block;
+	font-family: inherit;
+	font-size: 14px;
+	font-variant: normal;
+	font-weight: normal;
+	height: 2.1428571428571em;
+	line-height: 1.42857142857143;
+	margin: 0;
+	padding: 4px 10px;
+	text-decoration: none;
+	text-shadow: 0 1px 0 white;
+	vertical-align: baseline;
+	white-space: nowrap;
+}
+
+form.aui .text, 
+form.aui .password, 
+form.aui .textarea, 
+form.aui .select, 
+form.aui .multi-select, 
+form.aui .aui-select2-container .select2-choices {
+	border: 1px solid #ccc;
+	border-radius: 3.01px;
+	box-shadow: inset 0 1px 3px #ccc;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	font-size: inherit;
+	margin: 0;
+	max-width: 250px;
+	vertical-align: baseline;
+	width: 100%;
+}
+
+form.aui {
+	margin: 20px 0 0 0;
+	position: relative;
+}
+
+
+
+
+/* module-key = 'com.atlassian.jira.jira-issue-nav-components:issueviewer', location = 'issueviewer/styles/viewissue.less' */
+.editable-field {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+/* -webkit-transition:box-shadow 150ms ease-in 0ms; *//* transition:box-shadow 150ms ease-in 0ms; */
+	border-radius: 2.01px;
+	cursor: text;
+	display: inline-block;
+	max-width: 100%;
+/* box-shadow:0 0 0 0 transparent; */
+	padding: 2px 30px 2px 5px;
+	position: relative;
+	vertical-align: top;
+	word-break: break-word;
+}
+
+/* 编辑按钮 鼠标移上时显示 */
+.editable-field:hover{
+	box-shadow: 0 0 0 1px #cccccc;
+}
+
+.editable-field:hover .overlay-icon{
+	opacity: 1;
+	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+	z-index: auto;
+	-webkit-transition: opacity 150ms ease-in 0ms;
+	transition: opacity 150ms ease-in 0ms;
+}
+
+
+.editable-field:hover {
+	background-color: #fff;
+}
+
+
+.editable-field.active {
+	background-color: #fff;
+	display: block !important;
+	box-shadow: 0 0 0 0 transparent;
+}
+
+.editable-field.active .overlay-icon {
+	opacity: 0;
+	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+	z-index: -1;
+}
+
+.editable-field.active .save-options .aui-button,
+.editable-field.active .save-options .aui-button.cancel {
+	height: 24px;
+	padding: 0 4px;
+}
+
+.editable-field .overlay-icon {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	opacity: 0;
+	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+	background-color: #f0f0f0;
+	background-repeat: no-repeat;
+	background-position: 4px 4px;
+	border-left: 1px solid #cccccc;
+	bottom: 0;
+	height: auto;
+	margin: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 24px;
+	z-index: -1;
+}
+
+.editable-field .overlay-icon.throbber {
+	background-image: url(data:image/gif;
+	base64,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);
+	border: 1px solid #cccccc;
+}
+
+.editable-field .save-options {
+	background-color: #f0f0f0;
+	border: 1px solid #cccccc;
+	border-top: none;
+	border-radius: 0 0 3px 3px;
+	box-shadow: 0 3px 6px rgba(111, 111, 111, 0.2);
+	outline: none;
+	padding: 3px;
+	position: absolute;
+	right: 0;
+	top: 100%;
+	z-index: 1;
+}
+
+
+.editable-field form.aui .field-group .aui-ss,
+.editable-field form.aui .field-group .jira-multi-select,
+.editable-field form.aui .field-group .group,
+.editable-field form.aui .field-group input[type=text],
+.editable-field form.aui .field-group select,
+.editable-field form.aui .field-group textarea,
+.editable-field form.aui .field-group .text {
+	text-align: left;
+	vertical-align: top;
+	max-width: none;
+	width: 100%;
+}
+
+.editable-field form.aui .text,
+.editable-field form.aui .password,
+.editable-field form.aui .select {
+	height: 1.71429em;
+	line-height: 1;
+	padding: 4px 3px;
+}
+
+.editable-field form.aui .text,
+.editable-field form.aui .password,
+.editable-field form.aui .textarea,
+.editable-field form.aui .select,
+.editable-field form.aui .multi-select {
+	box-shadow: 0 1px 3px #e8e8e8 inset;
+}
